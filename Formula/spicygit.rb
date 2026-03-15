@@ -1,8 +1,8 @@
 class Spicygit < Formula
   desc "Terminal UI for git-spice — manage stacked branches and PRs"
   homepage "https://github.com/MortenHusted/spicygit"
-  url "https://github.com/MortenHusted/spicygit/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "e54a07ec8f395428d38221f5c757c4b9eb4cb05b37944b847edbefbc2dd44f19"
+  url "https://github.com/MortenHusted/spicygit/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "e3a252a1248b16924ada9f4064c3962323d7888322a5e458e09ed9551dcff8d8"
   license "MIT"
 
   depends_on "go" => :build
