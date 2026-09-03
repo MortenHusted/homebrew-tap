@@ -1,7 +1,6 @@
 class Lemmaspec < Formula
   desc "Typed, deterministic specifications compiled to deductive logic"
   homepage "https://github.com/MortenHusted/lemmaspec"
-  version "0.1.0"
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/MortenHusted/lemmaspec/releases/download/v0.1.0/lemmaspec-aarch64-apple-darwin.tar.xz"
@@ -70,5 +69,9 @@ class Lemmaspec < Formula
     # Install any leftover files in pkgshare; these are probably config or
     # sample files.
     pkgshare.install(*leftover_contents) unless leftover_contents.empty?
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/lemmaspec --version")
   end
 end
