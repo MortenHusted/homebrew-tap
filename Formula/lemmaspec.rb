@@ -3,22 +3,22 @@ class Lemmaspec < Formula
   homepage "https://github.com/MortenHusted/lemmaspec"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/MortenHusted/lemmaspec/releases/download/v0.1.0/lemmaspec-aarch64-apple-darwin.tar.xz"
-      sha256 "05791db1f4eb9898a9deb0358641e45d684592716270d9d1c6d0b5b18f6d277b"
+      url "https://github.com/MortenHusted/lemmaspec/releases/download/v0.2.0/lemmaspec-aarch64-apple-darwin.tar.xz"
+      sha256 "e79920cbf8711b549671c1ff1a560ed0fb659625b936b1c0bed0bce79d1fb4ed"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/MortenHusted/lemmaspec/releases/download/v0.1.0/lemmaspec-x86_64-apple-darwin.tar.xz"
-      sha256 "031b075a9e07c6e353676ba3bff9393e8da640ae56228d07fee9651947a89887"
+      url "https://github.com/MortenHusted/lemmaspec/releases/download/v0.2.0/lemmaspec-x86_64-apple-darwin.tar.xz"
+      sha256 "9e91e3de7b50ebc98b3b3eef1ab45916a73cbee589ebd21a6d370ed74d874d40"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/MortenHusted/lemmaspec/releases/download/v0.1.0/lemmaspec-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "bb2c64f63e1b0c7c61f383e74cee00a7b31368dc242a84ef48658dcb1a9df280"
+      url "https://github.com/MortenHusted/lemmaspec/releases/download/v0.2.0/lemmaspec-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "e523d2f9a1528a8000d40d0a797103c6010ff10de9f897d911c4c1f15bb3922d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/MortenHusted/lemmaspec/releases/download/v0.1.0/lemmaspec-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "721253b0e5c78f0db3c58bb2ff74f69f98d753ec2c6e49e80d993b3654c6fa6d"
+      url "https://github.com/MortenHusted/lemmaspec/releases/download/v0.2.0/lemmaspec-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "7b4436efbe50b41057cad9f34eeda3ed3ea2e13b74c6edbe52df5b1f698884ea"
     end
   end
   license "MIT"
@@ -47,18 +47,10 @@ class Lemmaspec < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "lemmaspec"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "lemmaspec"
-    end
-    if OS.linux? && Hardware::CPU.arm?
-      bin.install "lemmaspec"
-    end
-    if OS.linux? && Hardware::CPU.intel?
-      bin.install "lemmaspec"
-    end
+    bin.install "lemmaspec" if OS.mac? && Hardware::CPU.arm?
+    bin.install "lemmaspec" if OS.mac? && Hardware::CPU.intel?
+    bin.install "lemmaspec" if OS.linux? && Hardware::CPU.arm?
+    bin.install "lemmaspec" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
