@@ -3,22 +3,22 @@ class Lemmaspec < Formula
   homepage "https://github.com/MortenHusted/lemmaspec"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/MortenHusted/lemmaspec/releases/download/v0.3.0/lemmaspec-aarch64-apple-darwin.tar.xz"
-      sha256 "e4512b7119c2ed56d8986714507585e5208cc0ed261591e7a7822001a4ede08d"
+      url "https://github.com/MortenHusted/lemmaspec/releases/download/v0.3.1/lemmaspec-aarch64-apple-darwin.tar.xz"
+      sha256 "6ae0bba94a7f30b8a4d16d93d2b9fbb6a017148113e6f25fafa51256fb3a000a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/MortenHusted/lemmaspec/releases/download/v0.3.0/lemmaspec-x86_64-apple-darwin.tar.xz"
-      sha256 "07d4104c3e90dab5872814accc5b9411f1772d301f7097f9f8467ff31399d28c"
+      url "https://github.com/MortenHusted/lemmaspec/releases/download/v0.3.1/lemmaspec-x86_64-apple-darwin.tar.xz"
+      sha256 "39d09efb31aadf3e07a86183f97641640f8e9540f095fe1920f962678578e854"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/MortenHusted/lemmaspec/releases/download/v0.3.0/lemmaspec-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "0bb38657da83dd7ac4e9c2c7a603a5d9c3fb216fcc5619a1ce6986cfcb1effe0"
+      url "https://github.com/MortenHusted/lemmaspec/releases/download/v0.3.1/lemmaspec-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "79df40e4f54d27633f6f1d4c66828f06b0b099626fbcc66595821638b6389ac7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/MortenHusted/lemmaspec/releases/download/v0.3.0/lemmaspec-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "125ee0af5c620e45a1f0eae53e70e8b2fbbccdcbb98e58f3cf356311ca49e863"
+      url "https://github.com/MortenHusted/lemmaspec/releases/download/v0.3.1/lemmaspec-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "f63d06bb045895012ae0436376332c0e7d9cc16005bd4ae7951f03db4870585a"
     end
   end
   license "MIT"
