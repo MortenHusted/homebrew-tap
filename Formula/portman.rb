@@ -1,25 +1,25 @@
 class Portman < Formula
   desc "portman: local-dev DNS, proxy, and service runner (CLI + daemon)"
   homepage "https://github.com/MortenHusted/portman"
-  version "0.1.1"
+  version "0.1.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/MortenHusted/portman/releases/download/v0.1.1/portman-aarch64-apple-darwin.tar.xz"
-      sha256 "ed729da9f9073f7af6b18c29e19322ac18258dea324137e4c46990eb17c0999a"
+      url "https://github.com/MortenHusted/portman/releases/download/v0.1.2/portman-aarch64-apple-darwin.tar.xz"
+      sha256 "2ad2b441c6f51731edcf83e403f36c0833fbed6228648f60035eb46015652671"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/MortenHusted/portman/releases/download/v0.1.1/portman-x86_64-apple-darwin.tar.xz"
-      sha256 "a5f171079af6f771eb03465cbe65c9025d63321546f11ba813618c10f00ebc28"
+      url "https://github.com/MortenHusted/portman/releases/download/v0.1.2/portman-x86_64-apple-darwin.tar.xz"
+      sha256 "2b2c2eb99fad163562cf2de54c2f6cb10ae639f77605e9a9238a5c1251889909"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/MortenHusted/portman/releases/download/v0.1.1/portman-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "6d557c5ebc34bd1d22566c99bdbd8d78b952169fb824b2876302b2371f856913"
+      url "https://github.com/MortenHusted/portman/releases/download/v0.1.2/portman-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "11548fef866737b2c125920fe262dc78756deb985d115d9a2da4f43c661fbde1"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/MortenHusted/portman/releases/download/v0.1.1/portman-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "23b06696bdaefd4cac59239f2b538aa1bb758776b0cf89874f25b7a03725abe9"
+      url "https://github.com/MortenHusted/portman/releases/download/v0.1.2/portman-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "f504b98b60a80d72fe02bc0b665db5e2e9cf34fc29a7dc4ff67da318e4c775a1"
     end
   end
   license "MIT"
@@ -47,10 +47,18 @@ class Portman < Formula
   end
 
   def install
-    bin.install "portman", "portman-daemon" if OS.mac? && Hardware::CPU.arm?
-    bin.install "portman", "portman-daemon" if OS.mac? && Hardware::CPU.intel?
-    bin.install "portman", "portman-daemon" if OS.linux? && Hardware::CPU.arm?
-    bin.install "portman", "portman-daemon" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "portman", "portman-daemon"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "portman", "portman-daemon"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "portman", "portman-daemon"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "portman", "portman-daemon"
+    end
 
     install_binary_aliases!
 
