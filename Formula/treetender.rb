@@ -1,9 +1,8 @@
 class Treetender < Formula
   desc "Resource accounting and lifecycle coordination for Git workspaces"
   homepage "https://github.com/MortenHusted/treetender"
-  url "https://github.com/MortenHusted/treetender/archive/ad778d1b39bf20f0664b663fbc85f4dd809286fb.tar.gz"
-  version "0.2.0"
-  sha256 "a1078b329c9f7ebbd0dfdbb3f54d33101e2645ff9b9977eafd85499a85e33970"
+  url "https://github.com/MortenHusted/treetender/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "3eeb561ce4122ae6e8cc84aef323f969d829c1dac9e64f6761530b4e995bfdba"
   license "MIT"
   head "https://github.com/MortenHusted/treetender.git", branch: "main"
 
@@ -17,7 +16,9 @@ class Treetender < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/treetender --version")
-    assert_match "treetender-cli/v1", shell_output("#{bin}/treetender --json agent schema")
+    schema = shell_output("#{bin}/treetender --json agent schema")
+    assert_match "treetender-cli/v1", schema
+    assert_match "unregister", schema
     system "git", "init", "--initial-branch=main", "workspace"
     system bin/"treetender", "--repo", testpath/"workspace", "init"
     assert_path_exists testpath/"workspace/treetender.toml"
