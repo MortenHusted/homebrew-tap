@@ -1,8 +1,8 @@
 class Stele < Formula
   desc "Deterministic code facts and executable specifications"
   homepage "https://github.com/MortenHusted/stele"
-  url "https://github.com/MortenHusted/stele/releases/download/v0.5.9/stele-0.5.9-aarch64-apple-darwin.tar.gz"
-  sha256 "1da370d62250aeeeb274687ec28eea828389352abfc1db5af9611a09bde49737"
+  url "https://github.com/MortenHusted/stele/releases/download/v0.5.10/stele-0.5.10-aarch64-apple-darwin.tar.gz"
+  sha256 "16c22d8eb750c487363ba7249deb764efde1ab9a5d2a0fc23d142e75dc2cb320"
   license :cannot_represent
 
   depends_on arch: :arm64
@@ -10,8 +10,8 @@ class Stele < Formula
   depends_on :macos
 
   resource "ruby-tool-bundle" do
-    url "https://github.com/MortenHusted/stele/archive/refs/tags/v0.5.9.tar.gz"
-    sha256 "dde666e14336982c080a305676dbf8294135dedb0ea5394d0eb2fb63c56c2e98"
+    url "https://github.com/MortenHusted/stele/archive/refs/tags/v0.5.10.tar.gz"
+    sha256 "2d7f0cbe56fd2b556d080dc4ffea87d32f950dbd73f110e56839b7e5122dada9"
   end
 
   def install
