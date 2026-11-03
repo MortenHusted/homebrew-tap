@@ -36,11 +36,15 @@ class Stele < Formula
       CODEMAP_RUBY_TOOL_BUNDLE to its absolute path when running Stele.
 
       To give Claude Code and Codex the skills of the installed binary, add
-      the marketplace this formula installs; brew upgrade then moves both:
+      the marketplace this formula installs:
         claude plugin marketplace add #{opt_pkgshare}/marketplace
         claude plugin install stele@stele
         codex plugin marketplace add #{opt_pkgshare}/marketplace
         codex plugin add stele@stele
+      Claude Code reads the plugin in place, so brew upgrade moves it with the
+      binary. Codex copies it: run `codex plugin add stele@stele` after an
+      upgrade, and keep #{opt_pkgshare}/marketplace as the source in
+      ~/.codex/config.toml, since Codex records the versioned Cellar path.
     EOS
   end
 
