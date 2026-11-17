@@ -1,25 +1,25 @@
 class Portman < Formula
   desc "portman: local-dev DNS, proxy, and service runner (CLI + daemon)"
   homepage "https://github.com/MortenHusted/portman"
-  version "0.1.7"
+  version "0.1.8"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/MortenHusted/portman/releases/download/v0.1.7/portman-aarch64-apple-darwin.tar.xz"
-      sha256 "8ff9738c6570bb20a1daa5d45b9e8362a621fb0f22964d99a41524f3fe10eb56"
+      url "https://github.com/MortenHusted/portman/releases/download/v0.1.8/portman-aarch64-apple-darwin.tar.xz"
+      sha256 "57a724542560415a0b4a6ad51f9dbfbf9fbe4c89972981716b31943d8ee25c5d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/MortenHusted/portman/releases/download/v0.1.7/portman-x86_64-apple-darwin.tar.xz"
-      sha256 "49b392cf3116fc45af56f6e0c4bcad38030466c281d9211a87a493d69817ebaf"
+      url "https://github.com/MortenHusted/portman/releases/download/v0.1.8/portman-x86_64-apple-darwin.tar.xz"
+      sha256 "013cfe8dc90b852977f7db3c0cf6e101d118095a988f87d2313c95e903ee23bf"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/MortenHusted/portman/releases/download/v0.1.7/portman-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "2802f9bb3e2dbfe38d9528d593c6c2c16772998d6cb90d753ee85918a701e51d"
+      url "https://github.com/MortenHusted/portman/releases/download/v0.1.8/portman-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "ba8c23432e0000e77ededa7473637f4e423b395ba293a30781b68b7d66725ff5"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/MortenHusted/portman/releases/download/v0.1.7/portman-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "b6775afa04cf3b304508d206b276b602c4c520ba6c218b24577adad64874730e"
+      url "https://github.com/MortenHusted/portman/releases/download/v0.1.8/portman-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "e211ead0b9944f2c5821eb70b5fb5428d46cc69cd6178fefa03b0d71175db91e"
     end
   end
   license "MIT"
